@@ -2,8 +2,6 @@ module github.com/networkservicemesh/cmd-template
 
 go 1.16
 
-replace github.com/networkservicemesh/sdk => ../sdk
-
 require (
 	github.com/antonfisher/nested-logrus-formatter v1.3.1
 	github.com/kelseyhightower/envconfig v1.4.0
