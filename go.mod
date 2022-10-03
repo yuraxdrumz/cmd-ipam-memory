@@ -41,3 +41,7 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/square/go-jose.v2 v2.5.1 // indirect
 )
+
+replace github.com/networkservicemesh/sdk => ../sdk
+
+replace github.com/networkservicemesh/api => ../api

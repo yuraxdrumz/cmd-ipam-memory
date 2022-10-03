@@ -6,7 +6,7 @@ import (
 	_ "github.com/antonfisher/nested-logrus-formatter"
 	_ "github.com/kelseyhightower/envconfig"
 	_ "github.com/networkservicemesh/api/pkg/api/ipam"
-	_ "github.com/networkservicemesh/sdk/pkg/ipam/vl3ipam"
+	_ "github.com/networkservicemesh/sdk/pkg/ipam/chains/memory"
 	_ "github.com/networkservicemesh/sdk/pkg/tools/grpcutils"
 	_ "github.com/networkservicemesh/sdk/pkg/tools/log"
 	_ "github.com/networkservicemesh/sdk/pkg/tools/log/logruslogger"

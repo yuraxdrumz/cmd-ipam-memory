@@ -32,7 +32,7 @@ import (
 	"google.golang.org/grpc/credentials"
 
 	"github.com/networkservicemesh/api/pkg/api/ipam"
-	"github.com/networkservicemesh/sdk/pkg/ipam/vl3ipam"
+	"github.com/networkservicemesh/sdk/pkg/ipam/chains/memory"
 	"github.com/networkservicemesh/sdk/pkg/tools/grpcutils"
 	"github.com/networkservicemesh/sdk/pkg/tools/log"
 	"github.com/networkservicemesh/sdk/pkg/tools/log/logruslogger"
@@ -124,8 +124,8 @@ func main() {
 	)
 	server := grpc.NewServer(options...)
 
-	ipam.RegisterIPAMServer(server, vl3ipam.NewIPAMServer(config.Prefix, config.ClientPrefixLen))
-
+	ipam.RegisterIPAMV2Server(server, memory.NewIPAMServer(config.Prefix, config.ClientPrefixLen))
+	
 	for i := 0; i < len(config.ListenOn); i++ {
 		srvErrCh := grpcutils.ListenAndServe(ctx, &config.ListenOn[i], server)
 		exitOnErr(ctx, cancel, srvErrCh)
