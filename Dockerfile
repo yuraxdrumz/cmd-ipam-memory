@@ -8,6 +8,8 @@ RUN tar xzvf spire-1.2.2-linux-x86_64-glibc.tar.gz -C /bin --strip=2 spire-1.2.2
 
 FROM go as build
 WORKDIR /build
+COPY ./sdk ./sdk
+COPY ./api ./api
 COPY . .
 RUN go build -o /bin/app .
 
